@@ -58,7 +58,7 @@ class Connection(object):
     self.logger.debug("url is: {0}".format(url))
     req_time = dt.datetime.utcnow()
     signature = self._generate_signature(
-      path + "?" + urllib.urlencode(params), verb, channel, int(time.mktime(req_time.timetuple()))
+      path + "?" + urllib.urlencode(params), verb, channel, int(time.time())
     )    
     headers = {
       "Content-type": "text/xml", 
